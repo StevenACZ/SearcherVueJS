@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Chat VueJS</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<section id="app">
+	<div class="chat-container">
+		<div class="user-info">
+			<img class="user-info__img" src="https://picsum.photos/70/70">
+			<div class="user-info__details">
+				<h3 class="details__name">Julianne Delfina</h3>
+				<p class="details__description">"It's lovely after it rains"</p>
+			</div>
+		</div>
+		<ul class="chat-list">
+			<li class="chat-list__item" v-for="comment in comments">
+				<p class="item__message"> {{comment}} </p>
+			</li>
+			<input class="add-coment" type="text" placeholder="Comment" v-model="newComment" @keyup.enter="addComment">
+			<button class="btn" @click="addComment">Add a comment</button>
+		</ul>
+	</div>
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
